@@ -64,7 +64,7 @@ class SearchManager:
         async with self.search_info.create_search_index_client() as search_index_client:
             fields = [
                 SimpleField(name="id", type="Edm.String", key=True),
-                SearchableField(name="content", type="Edm.String", analyzer_name=self.search_analyzer_name),
+                SearchableField(name="content", type="Edm.String", analyzer_name="ja.microsoft"),
                 SearchField(
                     name="embedding",
                     type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
